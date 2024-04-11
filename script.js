@@ -237,6 +237,138 @@ mahogany_cont.addEventListener('click', () => {
 })
 // 
 
+
+bamboo_cont.addEventListener('click', () => {
+
+  let user_amount = document.getElementById('bamboo-user-amount').value;
+  if (parseInt(user_amount) >= 25 && !user_amount.includes('.') && !user_amount.includes('+') && !user_amount.includes('-') && !user_amount.includes('e')) {
+
+    bamboo_alert.style.display = 'none';
+    setTimeout(() => {
+      modal_id.classList.toggle('active');
+    }, 1000)
+
+    setTimeout(() => {
+      completed_id.classList.toggle('completed-hidden');
+    }, 1500)
+
+    pledge++;
+    let updated_number = number(pledge);
+    setTimeout(() => {
+      total.innerHTML = updated_number;
+    }, 2000)
+
+
+    let updated_amount = calculate_amount(user_amount);
+    setTimeout(() => {
+      total_amount.innerHTML = updated_amount;
+    }, 2000)
+
+
+    let completed_width = (parseInt(updated_amount.replaceAll(',', "")) / 100000) * 100;
+    setTimeout(() => {
+      completed_visual.style.width = `${completed_width}%`;
+    }, 2000)
+
+    pledge_left(bamboo_pledge_left, pledge);
+
+    zero_pledge_bamboo();
+
+  }
+  else {
+    bamboo_alert.style.display = 'block';
+  }
+
+})
+
+
+black_edition_cont.addEventListener('click', () => {
+
+  let user_amount = document.getElementById('blackEdition-user-amount').value;
+  if (parseInt(user_amount) >= 75 && !user_amount.includes('.') && !user_amount.includes('+') && !user_amount.includes('-') && !user_amount.includes('e')) {
+
+    black_edition_alert.style.display = 'none';
+    setTimeout(() => {
+      modal_id.classList.toggle('active');
+    }, 1000)
+
+    setTimeout(() => {
+      completed_id.classList.toggle('completed-hidden');
+    }, 1500)
+
+    pledge++;
+    let updated_number = number(pledge);
+    setTimeout(() => {
+      total.innerHTML = updated_number;
+    }, 2000)
+
+
+    let updated_amount = calculate_amount(user_amount);
+    setTimeout(() => {
+      total_amount.innerHTML = updated_amount;
+    }, 2000)
+
+
+    let completed_width = (parseInt(updated_amount.replaceAll(',', "")) / 100000) * 100;
+    setTimeout(() => {
+      completed_visual.style.width = `${completed_width}%`;
+    }, 2000)
+
+    pledge_left(blackEdition_pledge_left, pledge);
+    zero_pledge_blackEdition();
+
+  }
+  else {
+    black_edition_alert.style.display = 'block';
+  }
+
+})
+
+
+
+mahogany_cont.addEventListener('click', () => {
+
+  let user_amount = document.getElementById('mahogany-user-amount').value;
+  if (parseInt(user_amount) >= 200 && !user_amount.includes('.') && !user_amount.includes('+') && !user_amount.includes('-') && !user_amount.includes('e')) {
+
+    mahogany_alert.style.display = 'none';
+    setTimeout(() => {
+      modal_id.classList.toggle('active');
+    }, 1000)
+
+    setTimeout(() => {
+      completed_id.classList.toggle('completed-hidden');
+    }, 1500)
+
+    pledge++;
+    let updated_number = number(pledge);
+    setTimeout(() => {
+      total.innerHTML = updated_number;
+    }, 2000)
+
+
+    let updated_amount = calculate_amount(user_amount);
+    setTimeout(() => {
+      total_amount.innerHTML = updated_amount;
+    }, 2000)
+
+
+    let completed_width = (parseInt(updated_amount.replaceAll(',', "")) / 100000) * 100;
+    setTimeout(() => {
+      completed_visual.style.width = `${completed_width}%`;
+    }, 2000)
+
+    pledge_left(mahogany_pledge_left, pledge);
+    zero_pledge_mahogany();
+
+  }
+  else {
+    mahogany_alert.style.display = 'block';
+  }
+
+})
+
+
 const bamboo_pledge_left_id = document.getElementById(`bamboo-pledge-left-id`);
 const mahogany_pledge_left_id = document.getElementById(`mahogany-pledge-left-id`);
 const blackEdition_pledge_left_id =  document.getElementById(`blackEdition-pledge-left-id`);
@@ -367,3 +499,15 @@ for (let index = 0; index < reward_button.length; index++) {
     modal_id.classList.toggle('active');
   })
 }
+
+
+const time_left = document.getElementById('time-left');
+const duration = ()=>{
+  let date = new Date();
+  let day = date.getDate();
+  let days_left = 31-day;
+
+  time_left.innerHTML = days_left;
+}
+
+duration();
