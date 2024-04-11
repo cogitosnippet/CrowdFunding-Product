@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Link]()
+- Solution URL: [Link](https://github.com/cogitosnippet/CrowdFunding-Product)
 - Live Site URL: [Link](https://cogitosnippet.github.io/CrowdFunding-Product/)
 
 ## My process
@@ -69,8 +69,6 @@ const proudOfThisFunc = () => {
   console.log('🎉')
 }
 ```
-
-
 
 ## Author
 
