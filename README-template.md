@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Link](https://your-solution-url.com)
-- Live Site URL: [Link](https://your-live-site-url.com)
+- Solution URL: [Link]()
+- Live Site URL: [Link](https://cogitosnippet.github.io/CrowdFunding-Product/)
 
 ## My process
 
