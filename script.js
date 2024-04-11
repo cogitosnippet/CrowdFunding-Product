@@ -32,7 +32,6 @@ let new_total = total.innerHTML.replace(',', "");
 const completed_visual = document.getElementById('completed-visual-id');
 completed_visual.style.width = '50%';
 
-// const bamboo_pledge_left = document.getElementsByClassName('bamboo-pledge-left');
 
 let pledge = 0;
 
@@ -237,146 +236,9 @@ mahogany_cont.addEventListener('click', () => {
 })
 // 
 
-
-bamboo_cont.addEventListener('click', () => {
-
-  let user_amount = document.getElementById('bamboo-user-amount').value;
-  if (parseInt(user_amount) >= 25 && !user_amount.includes('.') && !user_amount.includes('+') && !user_amount.includes('-') && !user_amount.includes('e')) {
-
-    bamboo_alert.style.display = 'none';
-    setTimeout(() => {
-      modal_id.classList.toggle('active');
-    }, 1000)
-
-    setTimeout(() => {
-      completed_id.classList.toggle('completed-hidden');
-    }, 1500)
-
-    pledge++;
-    let updated_number = number(pledge);
-    setTimeout(() => {
-      total.innerHTML = updated_number;
-    }, 2000)
-
-
-    let updated_amount = calculate_amount(user_amount);
-    setTimeout(() => {
-      total_amount.innerHTML = updated_amount;
-    }, 2000)
-
-
-    let completed_width = (parseInt(updated_amount.replaceAll(',', "")) / 100000) * 100;
-    setTimeout(() => {
-      completed_visual.style.width = `${completed_width}%`;
-    }, 2000)
-
-    pledge_left(bamboo_pledge_left, pledge);
-
-    zero_pledge_bamboo();
-
-  }
-  else {
-    bamboo_alert.style.display = 'block';
-  }
-
-})
-
-
-black_edition_cont.addEventListener('click', () => {
-
-  let user_amount = document.getElementById('blackEdition-user-amount').value;
-  if (parseInt(user_amount) >= 75 && !user_amount.includes('.') && !user_amount.includes('+') && !user_amount.includes('-') && !user_amount.includes('e')) {
-
-    black_edition_alert.style.display = 'none';
-    setTimeout(() => {
-      modal_id.classList.toggle('active');
-    }, 1000)
-
-    setTimeout(() => {
-      completed_id.classList.toggle('completed-hidden');
-    }, 1500)
-
-    pledge++;
-    let updated_number = number(pledge);
-    setTimeout(() => {
-      total.innerHTML = updated_number;
-    }, 2000)
-
-
-    let updated_amount = calculate_amount(user_amount);
-    setTimeout(() => {
-      total_amount.innerHTML = updated_amount;
-    }, 2000)
-
-
-    let completed_width = (parseInt(updated_amount.replaceAll(',', "")) / 100000) * 100;
-    setTimeout(() => {
-      completed_visual.style.width = `${completed_width}%`;
-    }, 2000)
-
-    pledge_left(blackEdition_pledge_left, pledge);
-    zero_pledge_blackEdition();
-
-  }
-  else {
-    black_edition_alert.style.display = 'block';
-  }
-
-})
-
-
-
-mahogany_cont.addEventListener('click', () => {
-
-  let user_amount = document.getElementById('mahogany-user-amount').value;
-  if (parseInt(user_amount) >= 200 && !user_amount.includes('.') && !user_amount.includes('+') && !user_amount.includes('-') && !user_amount.includes('e')) {
-
-    mahogany_alert.style.display = 'none';
-    setTimeout(() => {
-      modal_id.classList.toggle('active');
-    }, 1000)
-
-    setTimeout(() => {
-      completed_id.classList.toggle('completed-hidden');
-    }, 1500)
-
-    pledge++;
-    let updated_number = number(pledge);
-    setTimeout(() => {
-      total.innerHTML = updated_number;
-    }, 2000)
-
-
-    let updated_amount = calculate_amount(user_amount);
-    setTimeout(() => {
-      total_amount.innerHTML = updated_amount;
-    }, 2000)
-
-
-    let completed_width = (parseInt(updated_amount.replaceAll(',', "")) / 100000) * 100;
-    setTimeout(() => {
-      completed_visual.style.width = `${completed_width}%`;
-    }, 2000)
-
-    pledge_left(mahogany_pledge_left, pledge);
-    zero_pledge_mahogany();
-
-  }
-  else {
-    mahogany_alert.style.display = 'block';
-  }
-
-})
-
-
 const bamboo_pledge_left_id = document.getElementById(`bamboo-pledge-left-id`);
 const mahogany_pledge_left_id = document.getElementById(`mahogany-pledge-left-id`);
 const blackEdition_pledge_left_id =  document.getElementById(`blackEdition-pledge-left-id`);
-
-
-
-
-
 
 
 
@@ -511,3 +373,75 @@ const duration = ()=>{
 }
 
 duration();
+
+///////////END\\\\\\\\\\\\\\\\\
+
+//  practise code
+
+
+// const number = (pledge) => {
+//   let final_total = parseInt(new_total) + pledge;
+
+//   let new_string = final_total.toString();
+
+//   for (let i = 3; i < new_string.length; i = i + 3) {
+//     new_string = new_string.slice(0, -i) + "," + new_string.slice(-i);
+//   }
+//   return (new_string)
+// }
+
+// const calculate_amount = (user_amount) => {
+
+//   let new_amount = total_amount.innerHTML.replace(',', "");
+//   let final_amount = parseInt(new_amount) + parseInt(user_amount);
+//   let final_amount_string = final_amount.toString();
+
+//   for (let i = 3; i < final_amount_string.length; i = i + 3) {
+//     final_amount_string = final_amount_string.slice(0, -i) + "," + final_amount_string.slice(-i);
+//   }
+//   return final_amount_string;
+// }
+
+// const pledge_left = (type_of_pledge, pledge) => {
+//   for (let i = 0; i < type_of_pledge.length; i++) {
+//     let left = parseInt(type_of_pledge[i].innerHTML) - 1;
+//     type_of_pledge[i].innerHTML = left;
+//   }
+// }
+
+
+// const bamboo_select_button = document.getElementById('bamboo-select-button');
+// const zero_pledge_bamboo = () => {
+//   for (let i = 0; i < bamboo_pledge_left.length; i++) {
+//     if (bamboo_pledge_left[i].innerHTML === '0') {
+//       bamboo_pledge_left_id.style.opacity = '0.5';
+//       bamboo_container.style.opacity = '0.5';
+//       bamboo_cont.disabled = true;
+//       bamboo_select_button.disabled = true;
+//     }
+//   }
+// }
+
+// const mahogany_select_button = document.getElementById('mahogany-select-button');
+// const zero_pledge_mahogany = () => {
+//   for (let i = 0; i < mahogany_pledge_left.length; i++) {
+//     if (mahogany_pledge_left[i].innerHTML === '0') {
+//       mahogany_pledge_left_id.style.opacity = '0.5';
+//       mahogany_container.style.opacity = '0.5';
+//       mahogany_cont.disabled = true;
+//       mahogany_select_button.disabled = true;
+//     }
+//   }
+// }
+
+// const blackEdition_select_button = document.getElementById('blackEdition-select-button');
+// const zero_pledge_blackEdition = () => {
+//   for (let i = 0; i < blackEdition_pledge_left.length; i++) {
+//     if (blackEdition_pledge_left[i].innerHTML === '0') {
+//       blackEdition_pledge_left_id.style.opacity = '0.5';
+//       black_edition_container.style.opacity = '0.5';
+//       black_edition_cont.disabled = true;
+//       blackEdition_select_button.disabled = true;
+//     }
+//   }
+// }
